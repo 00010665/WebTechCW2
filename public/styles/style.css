@@ -1,0 +1,42 @@
+:root {
+    font-size: 16px;
+    font-family: "Merriweather", serif;
+    --text-color: #313131;
+}
+  
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  
+    font-family: "Merriweather", serif;
+    border-bottom: 1px solid #eee;
+}
+
+.footer{
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  
+    font-family: "Merriweather", serif;
+    border-bottom: 1px solid #eee;
+}
+.map{
+    list-style-type: none;
+}

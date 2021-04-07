@@ -2,13 +2,32 @@ extends layout.pug
 
 block content
   main.content
-    h1.note-title #{ employeeDetail.name }
-    p.note-desc #{ employeeDetail.id }
-    p.note-desc #{ employeeDetail.surname }
-    p.note-desc #{ employeeDetail.position }
-    p.note-desc #{ employeeDetail.dob }
-    p.note-desc #{ employeeDetail.address }
-    p.note-desc #{ employeeDetail.passport }
-    p.note-desc #{ employeeDetail.phone }
-    p.note-desc #{ employeeDetail.education }
-    p.note-desc #{ employeeDetail.mstatus }
+    label.lbl-details Unique ID of employee
+        p.emp-info #{ employeeDetail.id }
+
+    label.lbl-details Name of employee
+        p.emp-info #{ employeeDetail.name }
+        
+    label.lbl-details Surname of employee
+        p.emp-info #{ employeeDetail.surname }
+
+    label.lbl-details Position of employee
+        p.emp-info #{ employeeDetail.position }
+
+    label.lbl-details Date of birth of employee
+        p.emp-info #{ employeeDetail.dob }
+
+    label.lbl-details Address of employee
+        p.emp-info #{ employeeDetail.address }
+
+    label.lbl-details Passport № of employee
+        p.emp-info #{ employeeDetail.passport }
+
+    label.lbl-details Pnone number of employee
+        p.emp-info #{ employeeDetail.phone }
+
+    label.lbl-details Educational background of employee
+        p.emp-info #{ employeeDetail.education }
+
+    label.lbl-details Marital status of employee
+        p.emp-info #{ employeeDetail.mstatus }
