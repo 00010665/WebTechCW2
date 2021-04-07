@@ -2,7 +2,7 @@ extends layout.pug
 
 block content
   main.content
-    h1.form-title Add Employee form
+    h1.form-title Update Employee #{ emp.name }
 
     if error
       p.error Error occured. Try again!
@@ -10,9 +10,9 @@ block content
     if success
       p.success Employee is saved. 
 
-    form.form(method='POST' action='/create')
+    form.form(method='POST' action=`/employees/${emp.id}/update`)
       label Name
-      input.input(type='text' name='EmpName')
+      input.input(type='text' name='EmpName' value=`${emp.name}`)
       br
 
       label Surname

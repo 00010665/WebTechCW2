@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+  main.content
+    h1.emp-title All employees
+
+    if deletedEmployee 
+      p.success The employee with id #{deletedEmployee} is deleted! 
+    
+    if employeeList
+      each value in employeeList
+        div.emp-wrapper
+          a.emp(href=`/employees/${ value.id }`)= value.name
+          a.delete(href=`/employees/${ value.id }/update`) Update
+          a.delete(href=`/employees/${ value.id }/delete`) Delete
+    
+    else 
+      H3 No any employee

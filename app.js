@@ -12,9 +12,9 @@ app.use('/static', express.static('public'))
 app.use(express.urlencoded({ extended: false }))
 const generateID = require("./public/javascript/script").generateID;
 
-const notesRouter = require('./routes/notes.js')
+const employeesRouter = require('./routes/employees.js')
 
-app.use('/notes', notesRouter)
+app.use('/employees', employeesRouter)
 
 app.get('/', (req, res) => {
 	res.render('home')
@@ -34,15 +34,15 @@ app.post('/create', (req, res) => {
     const phone = req.body.EmpPhone
     const education = req.body.EmpEdu
     const mstatus = req.body.EmpStatus
-
+    
 	if (name.trim() !== '' && surname.trim() !== '' && position.trim() !== '' && dob.trim() !== '' && address.trim() !== '' && passport.trim() !== ''  && phone.trim() !== '998'  && education.trim() !== ''  && mstatus.trim() !== '') {
 		
 		fs.readFile(DB, (err, data) => {
 			if (err) throw err
 
-			const notes = JSON.parse(data)
+			const employees = JSON.parse(data)
 
-			notes.push({
+			employees.push({
 				id: generateID(),
 				name: name,
 				surname: surname,
@@ -52,10 +52,10 @@ app.post('/create', (req, res) => {
                 passport: passport,
                 phone: phone,
                 education: education,
-                mstatus: mstatus,
+                mstatus: mstatus,                
 			})
 
-			fs.writeFile(DB, JSON.stringify(notes), err => {
+			fs.writeFile(DB, JSON.stringify(employees), err => {
 				if (err) throw err
 
 				res.render('create', { success: true })
@@ -71,14 +71,14 @@ app.post('/create', (req, res) => {
 
 
 
-app.get('/api/v1/notes', (req, res) => {
+app.get('/api/v1/employees', (req, res) => {
 
 	fs.readFile(DB, (err, data) => {
 		if (err) throw err
 
-		const notes = JSON.parse(data)
+		const employees = JSON.parse(data)
 
-		res.json(notes)
+		res.json(employees)
 	})
 })
 
@@ -87,8 +87,3 @@ app.listen(PORT, err => {
 
 	console.log('App is running on port 8000...')
 })
-
-
-// function id () {
-//   return '_' + Math.random().toString(36).substr(2, 9);
-// }
