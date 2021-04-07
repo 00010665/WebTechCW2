@@ -16,31 +16,31 @@ block content
       br
 
       label Surname
-      input.input(type='text' name='EmpSurname')
+      input.input(type='text' name='EmpSurname' value=`${emp.surname}`)
       br 
 
       label Position
-      input.input(type='text' name='EmpPosition')
+      input.input(type='text' name='EmpPosition' value=`${emp.position}`)
       br 
 
       label Date of Birth
-      input.input(type='date' name='EmpDoB')
+      input.input(type='date' name='EmpDoB' value=`${emp.dob}`)
       br 
 
       label Address 
-      input.input(type='text' name='EmpAddress')
+      input.input(type='text' name='EmpAddress' value=`${emp.address}`)
       br 
 
       label Passport №
-      input.input(type='text' name='EmpPassport')
+      input.input(type='text' name='EmpPassport' value=`${emp.passport}`)
       br
       
       label Phone number
-      input.input(type="tel" name="EmpPhone" value='998' pattern="998[0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}" required)       
+      input.input(type="tel" name="EmpPhone" pattern="998[0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}" required  value=`${emp.phone}`)       
       br
 
       label Educational background 
-      input.input(type='text' name='EmpEdu') 
+      input.input(type='text' name='EmpEdu' value=`${emp.education}`) 
       br
 
       label Marital status
@@ -58,4 +58,4 @@ block content
 
     
         
-      button.btn Add new employee
+      button.btn Update

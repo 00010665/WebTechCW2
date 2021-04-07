@@ -91,6 +91,14 @@ router.post('/:id/update', (req, res) =>{
 		const idx = employees.indexOf(filteredEmployee)
 
 		employees[idx].name = form.name
+		employees[idx].surname = form.surname
+		employees[idx].position = form.position
+		employees[idx].dob = form.dob
+		employees[idx].address = form.address
+		employees[idx].passport = form.passport
+		employees[idx].phone = form.phone
+		employees[idx].education = form.education
+		employees[idx].education = form.education
 
 		fs.writeFile(DB, JSON.stringify(employees), err =>{
 			if (err) throw err
