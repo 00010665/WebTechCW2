@@ -1,0 +1,59 @@
+extends layout.pug
+
+block content
+  main.content
+    h1.form-title Create note form
+
+    if error
+      p.error Error occured. Try again!
+
+    if success
+      p.success Note is saved. 
+
+    form.form(method='POST' action='/create')
+      label Name
+      input.input(type='text' name='EmpName')
+      br
+
+      label Surname
+      input.input(type='text' name='EmpSurname')
+      br 
+
+      label Position
+      input.input(type='text' name='EmpPosition')
+      br 
+
+      label Date of Birth
+      input.input(type='date' name='EmpDoB')
+      br 
+
+      label Address 
+      input.input(type='text' name='EmpAddress')
+      br 
+
+      label Passport №
+      input.input(type='text' name='EmpPassport')
+      br
+      
+      label Phone number
+      input.input(type="tel" name="EmpPhone" value='998' pattern="998[0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}" required)       
+      br
+
+      label Educational background 
+      input.input(type='text' name='EmpEdu') 
+      br
+
+      label Marital status
+      br
+      input.input(type="radio" name='EmpStatus' value='married')
+      label Married
+      br
+      input.input(type="radio" name='EmpStatus' value='single' checked)
+      label Single
+      br
+      input.input(type="radio" name='EmpStatus' value='divorced')
+      label Divorced
+      br
+    
+        
+      button.btn Create new note

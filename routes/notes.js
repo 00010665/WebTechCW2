@@ -8,7 +8,7 @@ const rootFolder = path.dirname(
     require.main.filename || process.require.main.filename
 )
 
-const DB = `${ rootFolder }/data/notes.json`
+const DB = `${ rootFolder }/database/employee.json`
 
 router.get('/', (req, res) => {
 
